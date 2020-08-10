@@ -20,7 +20,6 @@ public class Cartao {
 	@ManyToOne
 	private Cliente cliente;
 
-	@NotBlank
 	private boolean ativo;
 
 	public int getId() {

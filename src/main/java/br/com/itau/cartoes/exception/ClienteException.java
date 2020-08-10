@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(code = HttpStatus.NOT_FOUND)
-public class CartaoException extends RuntimeException{
+public class ClienteException extends RuntimeException{
 
 	/**
 	 * 
@@ -17,7 +17,7 @@ public class CartaoException extends RuntimeException{
 		return atributo;
 	}
 
-	public CartaoException(String atributo, String message) {
+	public ClienteException(String atributo, String message) {
 		super(message);
 		this.atributo = atributo;
 	}

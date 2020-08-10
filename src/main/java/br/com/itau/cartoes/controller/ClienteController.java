@@ -18,7 +18,7 @@ import br.com.itau.cartoes.model.Cliente;
 import br.com.itau.cartoes.service.ClienteService;
 
 @RestController
-@RequestMapping("/clientes")
+@RequestMapping("/cliente")
 public class ClienteController {
 
 	@Autowired
