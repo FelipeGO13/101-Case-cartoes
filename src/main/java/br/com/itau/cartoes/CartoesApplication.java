@@ -2,6 +2,9 @@ package br.com.itau.cartoes;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import br.com.itau.cartoes.mapper.PagamentoMapper;
 
 @SpringBootApplication
 public class CartoesApplication {
@@ -10,4 +13,8 @@ public class CartoesApplication {
 		SpringApplication.run(CartoesApplication.class, args);
 	}
 
+	@Bean
+	public PagamentoMapper pagamentoMapper() {
+		return new PagamentoMapper();
+	}
 }
