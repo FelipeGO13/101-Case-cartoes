@@ -9,7 +9,7 @@ public class CartaoDTO {
 	
 	private String numero;
 
-	private int clientId;
+	private int clienteId;
 	
 	@JsonInclude(Include.NON_NULL)
 	private Boolean ativo;
@@ -30,15 +30,15 @@ public class CartaoDTO {
 		this.numero = numero;
 	}
 
-	public int getClientId() {
-		return clientId;
+	public int getClienteId() {
+		return clienteId;
 	}
 
-	public void setClientId(int clientId) {
-		this.clientId = clientId;
+	public void setClienteId(int clienteId) {
+		this.clienteId = clienteId;
 	}
 
-	public Boolean isAtivo() {
+	public Boolean getAtivo() {
 		return ativo;
 	}
 

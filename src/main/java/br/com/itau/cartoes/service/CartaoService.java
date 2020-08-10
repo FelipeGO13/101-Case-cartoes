@@ -24,7 +24,7 @@ public class CartaoService {
 	
 	public Cartao criar(CartaoDTO cartaoDTO) {
 		
-		Optional<Cliente> cliente = clienteRepository.findById(cartaoDTO.getClientId());
+		Optional<Cliente> cliente = clienteRepository.findById(cartaoDTO.getClienteId());
 		
 		if(!cliente.isPresent()) {
 			throw new ClienteException("Cliente", "Cliente não encontrado");

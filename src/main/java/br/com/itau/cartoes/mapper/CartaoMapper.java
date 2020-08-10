@@ -20,7 +20,7 @@ public class CartaoMapper {
 
 		cartaoDTO.setId(cartao.getId());
 		cartaoDTO.setNumero(cartao.getNumero());
-		cartaoDTO.setClientId(cartao.getCliente().getId());
+		cartaoDTO.setClienteId(cartao.getCliente().getId());
 
 		return cartaoDTO;
 
