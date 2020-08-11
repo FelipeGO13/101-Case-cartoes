@@ -8,6 +8,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.Optional;
 
+import br.com.itau.cartoes.cliente.controller.ClienteController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,8 +22,8 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import br.com.itau.cartoes.model.Cliente;
-import br.com.itau.cartoes.service.ClienteService;
+import br.com.itau.cartoes.cliente.model.Cliente;
+import br.com.itau.cartoes.cliente.service.ClienteService;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(controllers = ClienteController.class)

@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.itau.cartoes.pagamento.controller.PagamentoController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,12 +24,12 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import br.com.itau.cartoes.dto.PagamentoDTO;
-import br.com.itau.cartoes.mapper.PagamentoMapper;
-import br.com.itau.cartoes.model.Cartao;
-import br.com.itau.cartoes.model.Cliente;
-import br.com.itau.cartoes.model.Pagamento;
-import br.com.itau.cartoes.service.PagamentoService;
+import br.com.itau.cartoes.pagamento.dto.PagamentoDTO;
+import br.com.itau.cartoes.pagamento.mapper.PagamentoMapper;
+import br.com.itau.cartoes.cartao.model.Cartao;
+import br.com.itau.cartoes.cliente.model.Cliente;
+import br.com.itau.cartoes.pagamento.model.Pagamento;
+import br.com.itau.cartoes.pagamento.service.PagamentoService;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(controllers = PagamentoController.class)

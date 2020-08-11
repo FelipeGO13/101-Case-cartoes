@@ -9,6 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.Optional;
 
+import br.com.itau.cartoes.cartao.controller.CartaoController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,12 +23,12 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import br.com.itau.cartoes.dto.CartaoDTO;
-import br.com.itau.cartoes.mapper.CartaoMapper;
-import br.com.itau.cartoes.model.Cartao;
-import br.com.itau.cartoes.model.Cliente;
-import br.com.itau.cartoes.service.CartaoService;
-import br.com.itau.cartoes.service.ClienteService;
+import br.com.itau.cartoes.cartao.dto.CartaoDTO;
+import br.com.itau.cartoes.cartao.mapper.CartaoMapper;
+import br.com.itau.cartoes.cartao.model.Cartao;
+import br.com.itau.cartoes.cliente.model.Cliente;
+import br.com.itau.cartoes.cartao.service.CartaoService;
+import br.com.itau.cartoes.cliente.service.ClienteService;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(controllers = CartaoController.class)

@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import br.com.itau.cartoes.repository.ClienteRepository;
+import br.com.itau.cartoes.cliente.repository.ClienteRepository;
+import br.com.itau.cartoes.pagamento.service.PagamentoService;
 import org.assertj.core.util.Lists;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,12 +20,12 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import br.com.itau.cartoes.dto.PagamentoDTO;
-import br.com.itau.cartoes.model.Cartao;
-import br.com.itau.cartoes.model.Cliente;
-import br.com.itau.cartoes.model.Pagamento;
-import br.com.itau.cartoes.repository.CartaoRepository;
-import br.com.itau.cartoes.repository.PagamentoRepository;
+import br.com.itau.cartoes.pagamento.dto.PagamentoDTO;
+import br.com.itau.cartoes.cartao.model.Cartao;
+import br.com.itau.cartoes.cliente.model.Cliente;
+import br.com.itau.cartoes.pagamento.model.Pagamento;
+import br.com.itau.cartoes.cartao.repository.CartaoRepository;
+import br.com.itau.cartoes.pagamento.repository.PagamentoRepository;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = PagamentoService.class)

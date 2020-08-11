@@ -5,6 +5,7 @@ import static org.mockito.Mockito.when;
 
 import java.util.Optional;
 
+import br.com.itau.cartoes.cliente.service.ClienteService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,8 +15,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import br.com.itau.cartoes.model.Cliente;
-import br.com.itau.cartoes.repository.ClienteRepository;
+import br.com.itau.cartoes.cliente.model.Cliente;
+import br.com.itau.cartoes.cliente.repository.ClienteRepository;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = ClienteService.class)

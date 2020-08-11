@@ -5,6 +5,8 @@ import static org.mockito.Mockito.when;
 
 import java.util.Optional;
 
+import br.com.itau.cartoes.cartao.service.CartaoService;
+import br.com.itau.cartoes.cliente.service.ClienteService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,11 +16,11 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import br.com.itau.cartoes.dto.CartaoDTO;
-import br.com.itau.cartoes.model.Cartao;
-import br.com.itau.cartoes.model.Cliente;
-import br.com.itau.cartoes.repository.CartaoRepository;
-import br.com.itau.cartoes.repository.ClienteRepository;
+import br.com.itau.cartoes.cartao.dto.CartaoDTO;
+import br.com.itau.cartoes.cartao.model.Cartao;
+import br.com.itau.cartoes.cliente.model.Cliente;
+import br.com.itau.cartoes.cartao.repository.CartaoRepository;
+import br.com.itau.cartoes.cliente.repository.ClienteRepository;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = CartaoService.class)
@@ -31,7 +33,7 @@ public class CartaoServiceTest {
 	private CartaoRepository cartaoRepository;
 	
 	@MockBean
-	private ClienteRepository clienteRepository;
+	private ClienteService clienteService;
 	
 	private Cartao cartao;
 	
@@ -67,7 +69,7 @@ public class CartaoServiceTest {
 	@Test
 	public void criarTest() {
 		when(cartaoRepository.save(Mockito.any(Cartao.class))).thenReturn(cartao);
-		when(clienteRepository.findById(Mockito.anyInt())).thenReturn(Optional.of(cliente));
+		when(clienteService.buscar(Mockito.anyInt())).thenReturn(Optional.of(cliente));
 		
 		Cartao cartaoCriado = cartaoService.criar(cartaoDTO);
 
