@@ -1,7 +1,11 @@
 package br.com.itau.cartoes.service;
 
 import java.util.Optional;
+import java.util.stream.StreamSupport;
 
+import br.com.itau.cartoes.exception.ClienteException;
+import br.com.itau.cartoes.model.Cliente;
+import br.com.itau.cartoes.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +24,9 @@ public class PagamentoService {
 	
 	@Autowired
 	private CartaoRepository cartaoRepository;
+
+	@Autowired
+	private ClienteRepository clienteRepository;
 	
 	public Pagamento criar(PagamentoDTO pagamentoDTO) {
 		

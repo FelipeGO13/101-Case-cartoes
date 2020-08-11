@@ -2,6 +2,7 @@ package br.com.itau.cartoes.controller;
 
 import javax.validation.Valid;
 
+import br.com.itau.cartoes.service.CartaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,25 +19,25 @@ import br.com.itau.cartoes.service.PagamentoService;
 
 @RestController
 public class PagamentoController {
-	
-	@Autowired
-	private PagamentoService pagamentoService;
-	
-	@Autowired
-	private PagamentoMapper pagamentoMapper;
-	
-	@PostMapping("/pagamento")
-	public ResponseEntity<?> criar(@Valid @RequestBody PagamentoDTO pagamentoDTO) {
-		
-		Pagamento pagamento = pagamentoService.criar(pagamentoDTO);
-		
-		return new ResponseEntity<>(pagamentoMapper.mapearPagamentoParaPagamentoDTO(pagamento), HttpStatus.CREATED);
-	}
-	
-	@GetMapping("/pagamentos/{id_cartao}")
-	public Iterable<PagamentoDTO> consultarPagamentoPorCartao(@PathVariable(name="id_cartao") int cartaoId){
-		
-		return pagamentoMapper.mapearListaPagamentoParaPagamentoDTO(pagamentoService.consultaPorCartao(cartaoId));
-	}
+
+    @Autowired
+    private PagamentoService pagamentoService;
+
+    @Autowired
+    private PagamentoMapper pagamentoMapper;
+
+    @PostMapping("/pagamento")
+    public ResponseEntity<?> criar(@Valid @RequestBody PagamentoDTO pagamentoDTO) {
+
+        Pagamento pagamento = pagamentoService.criar(pagamentoDTO);
+
+        return new ResponseEntity<>(pagamentoMapper.mapearPagamentoParaPagamentoDTO(pagamento), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/pagamentos/{id_cartao}")
+    public Iterable<PagamentoDTO> consultarPagamentoPorCartao(@PathVariable(name = "id_cartao") int cartaoId) {
+
+        return pagamentoMapper.mapearListaPagamentoParaPagamentoDTO(pagamentoService.consultaPorCartao(cartaoId));
+    }
 
 }

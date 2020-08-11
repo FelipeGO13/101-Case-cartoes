@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import br.com.itau.cartoes.repository.ClienteRepository;
 import org.assertj.core.util.Lists;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,7 +38,10 @@ public class PagamentoServiceTest {
 	
 	@MockBean
 	private CartaoRepository cartaoRepository;
-	
+
+	@MockBean
+	private ClienteRepository clienteRepository;
+
 	private Pagamento pagamento;
 	
 	private PagamentoDTO pagamentoDTO;

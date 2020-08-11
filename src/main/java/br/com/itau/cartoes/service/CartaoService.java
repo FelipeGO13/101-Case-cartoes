@@ -48,7 +48,18 @@ public class CartaoService {
 		
 		return cartao;
 	}
-	
+
+	public Iterable<Cartao> consultaPorCliente(int clientId){
+
+		Optional<Cliente> cliente = clienteRepository.findById(clientId);
+
+		if(!cliente.isPresent()) {
+			throw new ClienteException("Cliente", "Cliente não encontrado");
+		}
+
+		return cartaoRepository.findByCliente(cliente.get());
+	}
+
 	public Cartao editar(String numero, Cartao cartao) {
 		
 		Optional<Cartao> cartaoSelecionado = cartaoRepository.findByNumero(numero);
@@ -60,6 +71,7 @@ public class CartaoService {
 		cartaoSelecionado.get().setAtivo(cartao.isAtivo());
 		
 		return cartaoRepository.save(cartaoSelecionado.get());
-		
 	}
+
+
 }
