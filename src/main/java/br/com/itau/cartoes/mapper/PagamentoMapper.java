@@ -5,7 +5,9 @@ import java.util.List;
 
 import br.com.itau.cartoes.dto.PagamentoDTO;
 import br.com.itau.cartoes.model.Pagamento;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PagamentoMapper {
 
 	public PagamentoDTO mapearPagamentoParaPagamentoDTO(Pagamento pagamento) {

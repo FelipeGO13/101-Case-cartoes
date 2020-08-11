@@ -2,7 +2,9 @@ package br.com.itau.cartoes.mapper;
 
 import br.com.itau.cartoes.dto.CartaoDTO;
 import br.com.itau.cartoes.model.Cartao;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CartaoMapper {
 
 	public CartaoDTO mapearCartaoparaCartaoDTO(Cartao cartao) {

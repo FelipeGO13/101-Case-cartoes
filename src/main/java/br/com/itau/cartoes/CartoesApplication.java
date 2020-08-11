@@ -14,13 +14,4 @@ public class CartoesApplication {
 		SpringApplication.run(CartoesApplication.class, args);
 	}
 
-	@Bean
-	public PagamentoMapper pagamentoMapper() {
-		return new PagamentoMapper();
-	}
-	
-	@Bean
-	public CartaoMapper cartaoMapper() {
-		return new CartaoMapper();
-	}
 }
